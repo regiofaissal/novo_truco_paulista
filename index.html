@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Truco Paulista</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="audio-control.css">
+</head>
+<body>
+    <!-- Botões de controle de áudio -->
+    <div class="audio-controls">
+        <button id="sound-effects" class="audio-control" title="Clique para ativar/desativar os efeitos sonoros">🔊</button>
+        <button id="background-music" class="audio-control" title="Clique para ativar/desativar a música de fundo">🎵</button>
+    </div>
+
+    <div id="start-screen" class="start-screen">
+        <button id="start-btn" class="start-btn">Iniciar Jogo</button>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <div class="score-board">
+            <div class="team-score" id="team1-score">Nós: 0</div>
+            <div class="team-score" id="team2-score">Eles: 0</div>
+        </div>
+
+        <div class="game-table">
+            <!-- Jogador 4 (IA - Oponente) -->
+            <div class="player player-top" id="player4">
+                <div class="player-cards opponent-cards"></div>
+                <div class="player-name">Oponente 2</div>
+            </div>
+
+            <!-- Jogador 2 (IA - Oponente) -->
+            <div class="player player-left" id="player2">
+                <div class="player-cards opponent-cards"></div>
+                <div class="player-name">Oponente 1</div>
+            </div>
+
+            <!-- Área Central da Mesa -->
+            <div class="table-center">
+                <div class="played-cards"></div>
+                <div class="deck-area">
+                    <div class="deck"></div>
+                    <div class="vira"></div>
+                </div>
+            </div>
+
+            <!-- Jogador 3 (IA - Parceiro) -->
+            <div class="player player-right" id="player3">
+                <div class="player-cards opponent-cards"></div>
+                <div class="player-name">Parceiro</div>
+            </div>
+
+            <!-- Área do Jogador Principal -->
+            <div class="player player-bottom" id="player1">
+                <div class="player-name">Você</div>
+                <div class="player-cards my-cards"></div>
+            </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="action-buttons">
+            <button id="truco-btn" class="game-btn">Truco! 🎲</button>
+            <button id="run-btn" class="game-btn">Correr 🏃</button>
+            <!-- <button id="accept-btn" class="game-btn">Aceitar</button> -->
+        </div>
+
+        <!-- Modal de Fim de Jogo -->
+        <div class="game-over-modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2>Fim de Jogo!</h2>
+                <p id="winner-message"></p>
+                <button id="play-again-btn" class="game-btn">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
